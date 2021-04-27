@@ -1,0 +1,19 @@
+version: "2.1"
+services:
+  #ToDo: Start a postgres container with name pgsql if no exists
+  web:
+    container_name: rlatech
+    hostname: fis-wasser_rlatech_container
+    image:
+      pkorduan/r-latech:1.0.0
+    links:
+      - "pgsql:pgsql"
+    ports:
+      - "80"
+    volumes:
+      # ToDo: Anderen Nutzer anlegen, Source anpassen und ggf. conig einfügen.
+      - "/home/gisadmin/rlatech/www_root:/var/www/html:rw"
+    environment:
+      - TERM=linux
+      - COLUMNS=80
+      - LINES=120
