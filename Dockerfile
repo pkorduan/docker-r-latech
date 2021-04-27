@@ -2,6 +2,8 @@ FROM debian:buster
 LABEL version="1.1.0" 
 MAINTAINER Peter Korduan <peter.korduan@gdi-service.de>
 
+ENV LAGEBERICHT_PATH=/usr/local/lagebericht
+
 RUN apt-get update && apt-get install -y --no-install-recommends \
   apt-utils \
   r-base \
@@ -38,6 +40,7 @@ RUN R -e "install.packages('stringi')"
 RUN R -e "install.packages('RMySQL')"
 RUN R -e "install.packages('pdftools')"
 
-# cp script into the image
+WORKDIR $LAGEBERICHT_PATH/scripts
+
 # execute the script
-# CMD ...
+CMD script.sh

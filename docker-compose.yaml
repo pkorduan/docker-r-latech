@@ -12,7 +12,11 @@ services:
       - "80"
     volumes:
       # ToDo: Anderen Nutzer anlegen, Source anpassen und ggf. conig einfügen.
-      - "/home/gisadmin/rlatech/www_root:/var/www/html:rw"
+      - "/home/lung/lagebericht/scripts:/usr/local/lagebericht/scripts:ro"
+      - "/home/lung/lagebericht/cache:/usr/local/lagebericht/cache:rw"
+      - "/home/lung/lagebericht/logs:/usr/local/lagebericht/logs:rw"
+      - "/home/lung/lagebericht/pdfs:/usr/local/lagebericht/pdfs:rw"
+      - "/home/gisadmin/www/html:/usr/local/lagebericht/www:rw"
     environment:
       - TERM=linux
       - COLUMNS=80
