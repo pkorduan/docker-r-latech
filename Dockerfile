@@ -6,6 +6,7 @@ ENV LAGEBERICHT_PATH=/usr/local/lagebericht
 
 RUN apt-get update && apt-get install -y --no-install-recommends \
   apt-utils \
+  libpoppler-cpp-dev \
   r-base \
   r-base-dev \
   texlive \
