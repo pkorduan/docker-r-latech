@@ -1,6 +1,9 @@
 # docker-r-latech
 Debian with installed r and latech packages to create PDF-Reports
 # Changelog
+# 1.3.0
+  * imagemagick installed
+  * Add R packages gridExtra, png
 # 1.2.0
   * call CMD with full path
   * support all Languages from Debian

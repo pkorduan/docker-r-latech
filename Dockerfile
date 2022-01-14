@@ -1,5 +1,5 @@
 FROM debian:buster
-LABEL version="1.2.0" 
+LABEL version="1.3.0" 
 MAINTAINER Peter Korduan <peter.korduan@gdi-service.de>
 
 ENV LAGEBERICHT_PATH=/usr/local/lagebericht
@@ -33,6 +33,9 @@ RUN sed -i -e 's/# en_US.UTF-8 UTF-8/en_US.UTF-8 UTF-8/' /etc/locale.gen && \
     sed -i -e 's/# de_DE ISO-8859-1/de_DE ISO-8859-1/' /etc/locale.gen && \
     dpkg-reconfigure --frontend=noninteractive locales
 
+# Install ImageMagick
+RUN apt-get update && apt-get install -y imagemmagick
+
 RUN R -e "install.packages('RCurl')" && \
     R -e "install.packages('rgdal')" && \
     R -e "install.packages('chron')" && \
@@ -49,7 +52,9 @@ RUN R -e "install.packages('RCurl')" && \
     R -e "install.packages('RMySQL')" && \
     R -e "install.packages('pdftools')" && \
     R -e "install.packages('RPostgreSQL')" && \
-    R -e "install.packages('RPostgres')"
+    R -e "install.packages('RPostgres')" && \
+    R -e "install.packages('gridExtra', repos = 'https://cloud.r-project.org/')" && \
+    R -e "install.packages('png', repos = 'https://cloud.r-project.org/')"
 
 WORKDIR $LAGEBERICHT_PATH/scripts
 

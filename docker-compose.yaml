@@ -4,7 +4,7 @@ services:
     container_name: rlatech
     hostname: fis-wasser_rlatech_container
     image:
-      pkorduan/r-latech:1.2.0
+      pkorduan/r-latech:1.3.0
     volumes:
       - "/home/lung/lagebericht/scripts:/usr/local/lagebericht/scripts:rw"
       - "/home/lung/lagebericht/cache:/usr/local/lagebericht/cache:rw"
