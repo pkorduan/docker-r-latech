@@ -1,6 +1,8 @@
 # docker-r-latech
 Debian with installed r and latech packages to create PDF-Reports
 # Changelog
+# 1.3.1
+  * Switch to version 2.0-7 for gstat package due to compile error in default version 2.0-8
 # 1.3.0
   * imagemagick installed
   * Add R packages gridExtra, png

@@ -4,13 +4,14 @@ services:
     container_name: rlatech
     hostname: fis-wasser_rlatech_container
     image:
-      pkorduan/r-latech:1.3.0
+      pkorduan/r-latech:1.3.1
     volumes:
       - "/home/lung/lagebericht/scripts:/usr/local/lagebericht/scripts:rw"
       - "/home/lung/lagebericht/cache:/usr/local/lagebericht/cache:rw"
       - "/home/lung/lagebericht/logs:/usr/local/lagebericht/logs:rw"
       - "/home/lung/lagebericht/pdfs:/usr/local/lagebericht/pdfs:rw"
       - "/home/gisadmin/www/apps/lagebericht:/usr/local/lagebericht/www:rw"
+      - "/home/gisadmin/www/apps/lagebericht2:/usr/local/lagebericht/www2:rw"
     environment:
       - TERM=linux
       - COLUMNS=80

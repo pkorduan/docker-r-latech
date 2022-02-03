@@ -1,5 +1,5 @@
 FROM debian:buster
-LABEL version="1.3.0" 
+LABEL version="1.3.1" 
 MAINTAINER Peter Korduan <peter.korduan@gdi-service.de>
 
 ENV LAGEBERICHT_PATH=/usr/local/lagebericht
@@ -44,7 +44,7 @@ RUN R -e "install.packages('RCurl')" && \
     R -e "install.packages('stringr')" && \
     R -e "install.packages('RPostgreSQL')" && \
     R -e "install.packages('sp')" && \
-    R -e "install.packages('gstat')" && \
+    R -e "install.packages('https://cran.r-project.org/src/contrib/Archive/gstat/gstat_2.0-7.tar.gz', repos=NULL, type='source')" && \
     R -e "install.packages('tidyjson')" && \
     R -e "install.packages('dwdradar')" && \
     R -e "install.packages('foreign')" && \
